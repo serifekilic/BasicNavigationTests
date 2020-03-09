@@ -10,7 +10,7 @@ public class TitleVerification {
 
     static WebDriver driver;
 
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args){
 
         List<String> urls = Arrays.asList("http://practice.cybertekschool.com/",
                 "http://practice.cybertekschool.com/dropdown",
@@ -20,10 +20,11 @@ public class TitleVerification {
         List<String>title=new ArrayList<>();
         String result1="";
         String result2="";
-        for (int i = 0; i <urls.size() ; i++) {
-          driver.get(urls.get(i));
+
+        for(String eachUrl:urls){
+          driver.get(eachUrl);
          title.add( driver.getTitle() )  ;
-        if(  driver.getCurrentUrl().startsWith("http://practice.cybertekschool.com")){    ;
+        if(  driver.getCurrentUrl().startsWith("http://practice.cybertekschool.com")){
              result2="Test Passed: all URLs of all pages are same";
          }else{
              result2="Test Failed";

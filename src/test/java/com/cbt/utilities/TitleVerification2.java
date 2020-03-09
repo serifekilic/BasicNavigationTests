@@ -13,10 +13,9 @@ public class TitleVerification2 {
         List<String> urls = Arrays.asList("https://luluandgeorgia.com",
                 "https://wayfair.com/", "https://walmart.com ", "https://westelm.com/");
 
-        driver = BrowserFactory.getDriver("chrome");
-
-        for (int i = 0; i < urls.size(); i++) {
-            driver.get(urls.get(i));
+     driver = BrowserFactory.getDriver("chrome");
+        for( String eachUrl:urls){
+            driver.get(eachUrl);
             Thread.sleep(3000);
             String title = driver.getTitle().replace(" ", "").trim().toLowerCase();
 
